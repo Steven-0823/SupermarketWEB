@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using SupermarketWEB.Models;
 
 namespace SupermarketWEB.Data
@@ -13,6 +14,6 @@ namespace SupermarketWEB.Data
 		public DbSet<Category> Categories { get; set; }
 
         public DbSet<Provider> Providers { get; set; }
-        public DbSet<Pay_Mode> payModes { get; set; }
+		public DbSet<PayMode> payMode { get; set; }
     }
 }
