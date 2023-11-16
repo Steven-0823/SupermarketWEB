@@ -23,8 +23,8 @@ namespace SupermarketWEB.Pages.PayModes
 		[BindProperty]
 		public PayMode PayMode { get; set; } = default!;
 
-		public async Task<IActionResult> OnPostAsync()
-		{
+        public async Task<IActionResult> OnPostAsync()
+        {
 			if (!ModelState.IsValid || _context.payModes == null || PayMode == null)
 			{
 				return Page();
