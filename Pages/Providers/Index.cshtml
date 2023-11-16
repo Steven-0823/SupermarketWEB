@@ -18,27 +18,27 @@
 			<th>
 				@Html.DisplayNameFor(model=>model.Providers[0].ProductId)
 			</th>
-			
+
 		</tr>
 	</thead>
 	<tbody>
 		@foreach (var item in Model.Providers)
 		{
-				<tr>
-					<td>
+					<tr>
+						<td>
 					@Html.DisplayFor(modelItem=> item.Name)
-					</td>
-					<td>
+						</td>
+						<td>
 					@Html.DisplayFor(modelItem=> item.ProductId)
-					</td>
-					 <td>
-							<a asp-page ="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-						<a asp-page ="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-					</td> 
-					<td>
-						<span></span>
-					</td>
-				</tr>
+						</td>
+						 <td>
+								<a asp-page ="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+							<a asp-page ="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+						</td> 
+						<td>
+							<span></span>
+						</td>
+					</tr>
 		}
 	</tbody>
 </table>

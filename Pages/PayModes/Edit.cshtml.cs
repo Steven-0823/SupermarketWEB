@@ -18,11 +18,11 @@ namespace SupermarketWEB.Pages.PayModes
 			public PayMode PayMode { get; set; } = default!;
 			public async Task<IActionResult> OnGetAsync(int? id)
 			{
-				if (id == null || _context.payMode == null)
+				if (id == null || _context.payModes == null)
 				{
 					return NotFound();
 				}
-				var pamode = await _context.payMode.FirstOrDefaultAsync(m => m.Id == id);
+				var pamode = await _context.payModes.FirstOrDefaultAsync(m => m.Id == id);
 				if (pamode == null)
 				{
 					return NotFound();
@@ -59,7 +59,7 @@ namespace SupermarketWEB.Pages.PayModes
 			}
 			private bool CategoryExists(int id)
 			{
-				return (_context.payMode?.Any(e => e.Id == id)).GetValueOrDefault();
+				return (_context.payModes?.Any(e => e.Id == id)).GetValueOrDefault();
 			}
 		}
 }

@@ -23,7 +23,7 @@ namespace SupermarketWEB.Pages.Account
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name,"admin"),
+                    new Claim(ClaimTypes.Name,"admin    "),
                     new Claim(ClaimTypes.Email, User.Email),
 
                 };

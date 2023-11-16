@@ -21,12 +21,12 @@ namespace SupermarketWEB.Pages.PayModes
 
 		public async Task<IActionResult> OnGetAsync(int? id)
 		{
-			if (id == null || _context.payMode == null)
+			if (id == null || _context.payModes == null)
 			{
 				return NotFound();
 
 			}
-			var paymode = await _context.payMode.FirstOrDefaultAsync(m => m.Id == id);
+			var paymode = await _context.payModes.FirstOrDefaultAsync(m => m.Id == id);
 
 			if (paymode == null)
 			{
@@ -41,16 +41,16 @@ namespace SupermarketWEB.Pages.PayModes
 
 		public async Task<IActionResult> OnPostAsync(int? id)
 		{
-			if (id == null || _context.payMode == null)
+			if (id == null || _context.payModes == null)
 			{
 				return NotFound();
 			}
-			var paymode = await _context.payMode.FindAsync(id);
+			var paymode = await _context.payModes.FindAsync(id);
 
 			if (paymode != null)
 			{
 				PayMode = paymode;
-				_context.payMode.Remove(PayMode);
+				_context.payModes.Remove(PayMode);
 				await _context.SaveChangesAsync();
 
 			}

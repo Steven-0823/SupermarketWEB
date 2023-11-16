@@ -25,12 +25,12 @@ namespace SupermarketWEB.Pages.PayModes
 
 		public async Task<IActionResult> OnPostAsync()
 		{
-			if (!ModelState.IsValid || _context.payMode == null || PayMode == null)
+			if (!ModelState.IsValid || _context.payModes == null || PayMode == null)
 			{
 				return Page();
 
 			}
-			_context.payMode.Add(PayMode);
+			_context.payModes.Add(PayMode);
 			await _context.SaveChangesAsync();
 			return RedirectToPage("./Index");
 		}
