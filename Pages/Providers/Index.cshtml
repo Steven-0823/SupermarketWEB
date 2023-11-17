@@ -16,6 +16,9 @@
 				@Html.DisplayNameFor(model=>model.Providers[0].Name)
 			</th>
 			<th>
+				@Html.DisplayNameFor(model=>model.Providers[0].Description)
+			</th>
+			<th>
 				@Html.DisplayNameFor(model=>model.Providers[0].ProductId)
 			</th>
 
@@ -28,9 +31,13 @@
 						<td>
 					@Html.DisplayFor(modelItem=> item.Name)
 						</td>
-						<td>
+							<td>
+					@Html.DisplayFor(modelItem=> item.Description)
+							</td>
+								<td>
 					@Html.DisplayFor(modelItem=> item.ProductId)
-						</td>
+								</td>
+						
 						 <td>
 								<a asp-page ="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
 							<a asp-page ="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
